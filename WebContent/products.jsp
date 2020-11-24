@@ -1,7 +1,13 @@
+/*
+    JavaBeans을 통해 ProductRepository 메소드에 접근하여 Product인스턴스에 값들을 가져온다
+    for문을 통해 Product인스턴스에 상품이름, 상품정보, 상품가격을 출력한다
+    product.jsp로 이동하는 버튼을 출력한다
+*/
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="dto.Product" %>
-<jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session" />
+<%@ page import="dao.ProductRepository" %>
+
 <html>
 <head>
     <!-- https://getbootstrap.com/docs/4.3/getting-started/introduction/ -->
@@ -16,7 +22,8 @@
         </div>
     </div>
     <%
-        ArrayList<Product> listOfProducts = productDAO.getAllProducts();
+        ProductRepository dao = ProductRepository.getInstance();
+        ArrayList<Product> listOfProducts = dao.getAllProducts();
     %>    
     <div class="container">
         <div class="row" align="center">

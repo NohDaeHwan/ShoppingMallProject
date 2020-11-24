@@ -1,3 +1,9 @@
+/*
+ *  상품 클래스를 정의하고 삼품ID, 상품명, 상품 가격, 상품 정보, 상품 가테고리, 제조사, 재고수, 제품 상태를 
+ *  나타내는 속성과 이들 속성을 set, get하는 메소드를 포함하고 있다
+ *  또한 ProductRepository JavaBeans 클래스에게 상품의 속성 값을 추가하기 위한 메소드를 제공한다 
+*/  
+
 package dto;
 
 import java.io.Serializable;

@@ -1,3 +1,9 @@
+/*
+ * Product클래스를 List로 선언한다 Product인스턴스 3개에 각각 값을 입력한 후 List에 추가한다
+ * JavaBeans을 통해서 Product에 모든 값을 가져오기 위한 메소드를 선언한다
+ * JavaBeans을 통해서 ID를 가져온 후 그 ID와 일치하는 Product인스턴스를 반환한다
+*/
+
 package dao;
 
 import java.util.ArrayList;
@@ -7,6 +13,7 @@ import dto.Product;
 public class ProductRepository {
 	
 	private ArrayList<Product> listOfProducts = new ArrayList<Product>();
+	private static ProductRepository instance = new ProductRepository();
 	
 	public ProductRepository() {
 		
@@ -51,6 +58,14 @@ public class ProductRepository {
 			}
 		}
 		return productById;
+	}
+	
+	public static ProductRepository getInstance() {
+		return instance;
+	}
+	
+	public void addProduct(Product product) {
+		listOfProducts.add(product);
 	}
 	
 }

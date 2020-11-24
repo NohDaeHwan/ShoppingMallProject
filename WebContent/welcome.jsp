@@ -1,3 +1,8 @@
+/*
+    머리말인 입력되어 있는 menu.jsp와 저작권이 입력되어 있는 footer.jsp를 이 파일에 포함시킨다
+    스타일 시트를 이용하여 웹 홈페이지를 꾸민다
+    웹 홈페이지에 접속하면 현재 접속한 시간을 표시하고 5초마다 갱신한다
+*/
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@ page import="java.util.Date"%>
 <html>

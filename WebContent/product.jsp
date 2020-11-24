@@ -1,6 +1,11 @@
+/*
+   Products.jsp에서 넘겨받은 ID를 ProductRepository에 넘겨서 ID와 일치하는 Product인스턴스를 가져온다
+   Product인스턴스에 값을 출력한다
+   products.jsp로 이동하는 버튼과 상품주문 버튼을 출력한다
+*/
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@ page import="dto.Product"%>
-<jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session" />
+<%@ page import="dao.ProductRepository" %>
 <html>
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -15,7 +20,8 @@
     </div>
     <%
         String id = request.getParameter("id");
-        Product product = productDAO.getProductById(id);
+    ProductRepository dao = ProductRepository.getInstance();
+        Product product = dao.getProductById(id);
     %>
     <div class="container">
         <div class="row">
